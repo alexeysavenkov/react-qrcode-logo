@@ -17,6 +17,7 @@ export interface IProps {
     logoOpacity?: number;
     qrStyle?: 'squares' | 'dots';
     style?: object;
+    onQrDraw?: (o: object) => any;
 }
 
 export class QRCode extends React.Component<IProps, {}> {
@@ -104,7 +105,9 @@ export class QRCode extends React.Component<IProps, {}> {
             logoWidth,
             logoHeight,
             logoOpacity,
-            qrStyle
+            qrStyle,
+
+            onQrDraw
         } = this.props;
 
         const qrCode = qrGenerator(0, ecLevel);
@@ -181,6 +184,10 @@ export class QRCode extends React.Component<IProps, {}> {
             };
             image.src = logoImage;
         }
+
+        onQrDraw && onQrDraw({
+            cellSize
+        })
     }
 
     render() {
