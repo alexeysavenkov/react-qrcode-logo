@@ -184,7 +184,7 @@ export class QRCode extends React.Component<IProps, {}> {
             };
             image.src = logoImage;
         }
-
+        console.log('onQrDraw call')
         onQrDraw && onQrDraw({
             cellSize
         })

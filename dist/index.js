@@ -135,6 +135,7 @@ var QRCode = /** @class */ (function (_super) {
             };
             image_1.src = logoImage;
         }
+        console.log('onQrDraw call')
         onQrDraw && onQrDraw({
             cellSize: cellSize
         });
